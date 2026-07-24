@@ -6,6 +6,7 @@ select
 
     -- amount is stored in cents, convert it to dollars
     {{ cents_to_dollars('amount', 2) }} as amount,
-    created as created_at
+    created as created_at,
+    -- new_column
 
 from {{ source('stripe', 'payment') }}
